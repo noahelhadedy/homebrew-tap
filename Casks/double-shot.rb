@@ -12,7 +12,7 @@ cask "double-shot" do
     strategy :github_latest
   end
 
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "Double Shot.app"
 
