@@ -16,10 +16,13 @@ cask "double-shot" do
 
   app "Double Shot.app"
 
-  # The app isn't notarized yet. Clearing the download flag lets it open without the Gatekeeper prompt.
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/Double Shot.app"]
+  # The app isn't notarized yet. Homebrew 7 no longer flags downloads, older versions do, so clear
+  # the flag there and the app opens without the Gatekeeper prompt.
+  unless respond_to?(:postflight_steps)
+    postflight do
+      system_command "/usr/bin/xattr",
+                     args: ["-dr", "com.apple.quarantine", "#{appdir}/Double Shot.app"]
+    end
   end
 
   uninstall quit: "com.noahelhadedy.DoubleShot"
