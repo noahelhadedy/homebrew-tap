@@ -1,6 +1,6 @@
 cask "double-shot" do
-  version "1.0.5"
-  sha256 "cfaa39db6af95d11f13f0eacc04e8cb98d602b3a9b48d1f6cea15e07f20fa55f"
+  version "1.0.6"
+  sha256 "67a67dd6b61b1766307595c349e8932dbc00de8b2708dd43eb7fd771daddc33e"
 
   url "https://github.com/noahelhadedy/double-shot/releases/download/v#{version}/DoubleShot-#{version}.zip"
   name "Double Shot"
